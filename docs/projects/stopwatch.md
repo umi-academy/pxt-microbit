@@ -53,19 +53,33 @@ on button pressed
 If you translate the pseudo-code line by line into blocks, it might end up like this.
 
 ```blocks
-let start_time = 0
-input.onButtonPressed(Button.A, function () {
-    // is the watch running?
-    if (start_time == 0) {
-        // store current time
-        start_time = input.runningTime()
-        basic.showIcon(IconNames.Butterfly)
-    } else {
-        // compute duration and display it
-        basic.showNumber(Math.idiv(input.runningTime() - start_time, 1000))
-        // reset watch state
-        start_time = 0
+radio.onReceivedNumber(function (receivedNumber) {
+    if (start != 0) {
+        steps += 1
+        led.toggle(0, 0)
     }
 })
-start_time = 0
+input.onButtonPressed(Button.A, function () {
+    if (start == 0) {
+        // store current time
+        start = input.runningTime()
+        steps = 0
+        basic.showIcon(IconNames.Butterfly)
+    } else {
+        time = (input.runningTime() - start) / 1000
+        basic.showString("TIME")
+        // compute duration and display it
+        basic.showNumber(time)
+        basic.showString("STEPS")
+        basic.showNumber(steps)
+        // reset watch state
+        start = 0
+    }
+})
+let time = 0
+let steps = 0
+let start = 0
+basic.showString("STOPWATCH")
+radio.setGroup(1)
+start = 0
 ```
