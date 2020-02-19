@@ -35,6 +35,7 @@ input.onGesture(Gesture.ThreeG, function () {
     radio.sendNumber(0)
 })
 radio.setGroup(1)
+radio.setTransmitPower(7)
 basic.showString("RUNNER")
 ```
 
@@ -56,9 +57,9 @@ input.onButtonPressed(Button.B, function () {
     }
 })
 radio.onReceivedNumber(function (receivedNumber) {
+    led.toggle(0, 0)
     if (recording) {
         steps += 1
-        led.toggle(0, 0)
     }
 })
 input.onButtonPressed(Button.A, function () {
