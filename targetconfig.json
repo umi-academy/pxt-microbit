@@ -170,15 +170,7 @@
             "daferdur/pxt-myHX711"
         ],
         "preferredRepos": [
-            "Microsoft/pxt-neopixel",
-            "Microsoft/pxt-microturtle",
-            "Tinkertanker/pxt-tinkercademy-tinker-kit",
-            "kittenbot/pxt-robotbit",
-            "Microsoft/pxt-sonar",
-            "4tronix/BitBot",
-            "kitronikltd/pxt-kitronik-servo-lite",
-            "kitronikltd/pxt-kitronik-motor-driver",
-            "Tinkertanker/pxt-ringbitcar"
+			"umi-academy/abc2.0"
         ]
     },
     "galleries": {
